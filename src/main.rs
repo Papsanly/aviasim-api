@@ -1,10 +1,9 @@
-use std::env;
-use axum::{Router, serve};
-use axum::routing::get;
-use tokio::net::TcpListener;
+use axum::{routing::get, serve, Router};
 use color_eyre::Result;
 use dotenvy::dotenv;
 use sqlx::PgPool;
+use std::env;
+use tokio::net::TcpListener;
 
 async fn hello_world() -> &'static str {
     "Hello, World!"
@@ -12,7 +11,7 @@ async fn hello_world() -> &'static str {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    dotenv()?;
+    dotenv().ok();
 
     let url = env::var("DATABASE_URL")?;
     let pool = PgPool::connect(&url).await?;
