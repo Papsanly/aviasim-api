@@ -37,7 +37,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.5
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secretes.SSH_USER }}
+          username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           key: ${{ secrets.SSH_KEY }}
           script: |
