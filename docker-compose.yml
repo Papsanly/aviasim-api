@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3472:3472"
+      - "3472:${API_PORT}"
     depends_on:
       - db
   db:
@@ -16,7 +16,7 @@ services:
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - "5432:${DB_PORT}"
     volumes:
       - db:/var/lib/postgresql/data
 
