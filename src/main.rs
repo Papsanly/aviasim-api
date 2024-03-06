@@ -10,8 +10,6 @@ async fn hello_world() -> &'static str {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    println!("Hello, World!");
-
     let url = env::var("DATABASE_URL")?;
     let pool = PgPool::connect(&url).await?;
     sqlx::migrate!().run(&pool).await?;
