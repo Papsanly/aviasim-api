@@ -15,8 +15,7 @@ pub enum ClientProvider {
 pub struct Client {
     pub phone: String,
     pub email: String,
-    pub first_name: String,
-    pub second_name: String,
+    pub name: String,
     pub provider: ClientProvider,
 }
 
@@ -50,7 +49,7 @@ pub struct OrderInfo {
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct DirectOrder {
+pub struct Order {
     pub order_info: OrderInfo,
     pub time: DateTime,
 }
@@ -68,5 +67,4 @@ pub struct GiftOrder {
     pub gift_code: GiftCode,
     pub recipient: Client,
     pub delivery_address: Option<String>,
-    pub activated_time: Option<DateTime>,
 }
