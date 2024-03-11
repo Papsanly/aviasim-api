@@ -38,7 +38,7 @@ async fn order(
         order_info.client.email,
         order_info.client.name,
         order_info.client.provider.to_string(),
-        order_info.duration as i16,
+        order_info.duration,
         order_info.simulator.to_string()
     )
     .fetch_one(transaction.as_mut())

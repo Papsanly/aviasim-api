@@ -1,5 +1,5 @@
 [package]
-name = "aviasim-orders"
+name = "aviasim-api"
 version = "0.1.0"
 edition = "2021"
 

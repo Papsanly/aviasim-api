@@ -42,7 +42,7 @@ pub struct Promocode {
 #[derive(Serialize, Deserialize)]
 pub struct OrderInfo {
     pub client: Client,
-    pub duration: u32,
+    pub duration: i16,
     pub simulator: Simulator,
     pub promocode: Option<Promocode>,
     pub comment: Option<String>,
